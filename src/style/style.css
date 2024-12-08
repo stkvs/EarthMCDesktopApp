@@ -1,0 +1,372 @@
+:root {
+    --background: #16171d;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter';
+}
+
+html {
+    overflow: hidden;
+}
+
+aside {
+    position: absolute;
+    z-index: +1;
+    left: 0;
+    height: 100vh;
+    width: 300px;
+    background-color: var(--background);
+    padding: 16px;
+    transition: all 250ms;
+}
+
+.banner {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    border-bottom: 1px solid #2b2c37;
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+}
+
+.banner img {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #bdbecb;
+}
+
+.banner h3 {
+    color: #bdbecb;
+    font-size: 1rem;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-bottom: 1px solid #2b2c37;
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+}
+
+.threed {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+h2 {
+    color: #bdbecb;
+    font-size: 1.5rem;
+}
+
+p, em {
+    color: rgba(189, 190, 203, 0.7);
+    font-weight: light;
+    font-size: 1rem;
+}
+
+#dataLabel {
+    color: #bdbecb;
+    font-size: 0.7rem;
+}
+
+hr {
+    opacity: 0.2;
+    margin-bottom: 16px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.group {
+    width: 100%;
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+}
+  
+.input {
+    width: 100%;
+    height: 45px;
+    padding-left: 2.5rem;
+    padding-right: 0.75rem;
+    box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+    border: 0;
+    border-radius: 12px;
+    background-color: #16171d;
+    outline: none;
+    color: #bdbecb;
+    transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+    cursor: text;
+    z-index: 0;
+}
+
+.input::placeholder {
+    color: #bdbecb;
+}
+
+.input:hover {
+    box-shadow: 0 0 0 2.5px #2f303d, 0px 0px 25px -15px #000;
+}
+
+.input:focus {
+    box-shadow: 0 0 0 2.5px #2f303d;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    fill: #bdbecb;
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.radio-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    background-color: #16171d;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+    padding: 0.5rem;
+    width: 300px;
+    font-size: 14px;
+}
+  
+.radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+}
+  
+.radio-inputs .radio input {
+    display: none;
+}
+  
+.radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    padding: .5rem 0;
+    color: #bdbecb;
+    transition: all .15s ease-in-out;
+}
+  
+.radio-inputs .radio input:checked + .name {
+    background-color: #2f303d;
+    font-weight: 600;
+}
+
+button {
+    padding: 0.5rem;
+    width: 100%;
+    border: unset;
+    border-radius: 0.5rem;
+    color: #bdbecb;
+    z-index: 1;
+    background: #16171d;
+    position: relative;
+    font-size: 14px;
+    -webkit-box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+    box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+    transition: all 250ms;
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+  
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 0.5rem;
+    background-color: #e8e8e8;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(255, 255, 255, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(255, 255, 255, 0.27);
+    transition: all 250ms
+}
+  
+button:hover {
+    cursor: pointer;
+    color: #212121;
+}
+  
+button:hover::before {
+    width: 100%;
+}
+
+.playerStatus {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    z-index: +1;
+}
+
+.data {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.playerData, .nationData, .townData {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+span:not(#nation) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+span img {
+    width: 16px;
+    height: 16px;
+}
+
+.data .playerSkin {
+    position: relative;
+    padding: 8px;
+    border-radius: 12px;
+    background-color: #16171d;
+    box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.data .playerSkin img {
+    width: auto;
+    height: 300px;
+    object-fit: contain;
+}
+
+.earthmcMap {
+    width: 100vw;
+    height: 100vh;
+    filter: brightness(0.9);
+}
+
+#closeAside {
+    position: absolute;
+    top: 8px;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+}
+
+#closeAside img {
+    width: 100%;
+    height: 100%;
+    filter: invert(1);
+    transition: all 250ms;
+}
+
+.rank {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: flex;
+    gap: 4px;
+    border-top: 1px solid #2b2c37;
+    flex-direction: column;
+}
+
+.rank:last-of-type {
+    border-bottom: 1px solid #2b2c37;
+}
+
+#moreInfo {
+    display: flex;
+    margin-bottom: unset;
+    gap: 8px;
+}
+
+#moreInfo button {
+    flex: 1;
+    font-size: 0.6rem;
+}
+
+.show-friends {
+    margin-bottom: unset;
+}
+
+.modal {
+    position: absolute;
+    bottom: 8px;
+    left: 340px;
+    width: 300px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: var(--background);
+    box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+    border-radius: 12px;
+    z-index: +1;
+    transition: all 250ms;
+}
+
+.modalData {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 4px;
+    cursor: pointer;
+    color: #bdbecb;
+}
+
+@media screen and (max-height: 960px) {
+    aside {
+        overflow-y: scroll;
+    }
+}
